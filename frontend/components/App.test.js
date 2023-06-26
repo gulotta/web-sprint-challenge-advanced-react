@@ -18,3 +18,15 @@ test('email field text placeholder', () => {
   const email = screen.getByPlaceholderText(/type email/i);
   fireEvent.click(email)
 })
+
+test('display coordinates', () => {
+  render(<AppFunctional/>)
+  const coordinates = screen.getByText(/Coordinates/i)
+  expect(coordinates).toBeInTheDocument();
+})
+
+test('display email', () => {
+  render(<AppFunctional/>)
+  const email = screen.getByPlaceholderText(/type email/i)
+  expect(email).toBeInTheDocument();
+})
